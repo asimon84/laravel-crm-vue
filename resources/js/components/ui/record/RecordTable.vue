@@ -1,16 +1,31 @@
 <script setup>
-import DataTable from 'datatables.net-vue3';
-import DataTablesCore from 'datatables.net';
+    import { onMounted, ref } from 'vue';
+    import $ from 'jquery';
+    import 'datatables.net';
 
-DataTable.use(DataTablesCore);
+    const tableRef = ref(null);
 
-const data = [
-  ['1', 'String', 'Text', '{}', '1', '10', '123.456', ''],
-];
+    onMounted(() => {
+        $(tableRef.value).DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '/records',
+            columns: [
+                {data: 'id', name: 'id', searchable: true},
+                {data: 'string', name: 'string', className: 'truncate-text', searchable: true},
+                {data: 'text', name: 'text', className: 'truncate-text', searchable: true},
+                {data: 'json', name: 'json', className: 'truncate-text', searchable: true},
+                {data: 'boolean', name: 'boolean', searchable: true},
+                {data: 'integer', name: 'integer', searchable: true},
+                {data: 'float', name: 'float', searchable: true},
+                {data: 'action', name: 'action', orderable: false, searchable: false},
+            ],
+        });
+    });
 </script>
 
 <template>
-  <DataTable :data="data" class="display">
+  <table ref="tableRef" class="display">
     <thead>
       <tr>
         <th>ID</th>
@@ -35,7 +50,7 @@ const data = [
         <th width="100px">Action</th>
       </tr>
     </tfoot>
-  </DataTable>
+  </table>
 </template>
 
 <style>
