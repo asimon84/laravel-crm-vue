@@ -40,7 +40,22 @@ const breadcrumbs: BreadcrumbItem[] = [
             <div
                 class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
             >
-                <PlaceholderPattern />
+                <table id="recordTable" class="table table-bordered stripe hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>String</th>
+                        <th>Text</th>
+                        <th>JSON</th>
+                        <th>Boolean</th>
+                        <th>Integer</th>
+                        <th>Float</th>
+                        <th width="100px">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
     </AppLayout>
