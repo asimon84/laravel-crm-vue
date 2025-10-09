@@ -3,10 +3,10 @@
     import $ from 'jquery';
     import 'datatables.net';
 
-    const tableRef = ref(null);
+    const recordTable = ref(null);
 
     onMounted(() => {
-        $(tableRef.value).DataTable({
+        $(recordTable.value).DataTable({
             processing: true,
             serverSide: true,
             ajax: '/records',
@@ -25,7 +25,7 @@
 </script>
 
 <template>
-  <table ref="tableRef" class="display">
+  <table ref="recordTable" class="display">
     <thead>
       <tr>
         <th>ID</th>
