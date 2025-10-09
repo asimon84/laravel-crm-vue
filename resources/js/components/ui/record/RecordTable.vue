@@ -38,3 +38,6 @@ const data = [
   </DataTable>
 </template>
 
+<style>
+    @import 'datatables.net-dt';
+</style>
