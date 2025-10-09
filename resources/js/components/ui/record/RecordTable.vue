@@ -2,6 +2,10 @@
     import { onMounted, ref } from 'vue';
     import $ from 'jquery';
     import 'datatables.net';
+    import 'datatables.net-dt';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Includes Popper.js
+    import 'bootstrap-icons/font/bootstrap-icons.css';
 
     const recordTable = ref(null);
 
@@ -52,7 +56,3 @@
     </tfoot>
   </table>
 </template>
-
-<style>
-    @import 'datatables.net-dt';
-</style>
