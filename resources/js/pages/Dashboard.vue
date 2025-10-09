@@ -4,6 +4,7 @@ import { dashboard } from '@/routes';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
 import RecordTable from '../components/ui/record/RecordTable.vue';
+import RecordModal from '../components/ui/record/RecordModal.vue';
 import PlaceholderPattern from '../components/PlaceholderPattern.vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -44,5 +45,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                     <RecordTable />
             </div>
         </div>
+
+        <RecordModal />
     </AppLayout>
 </template>
