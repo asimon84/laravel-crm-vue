@@ -43,7 +43,6 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js"></script>
-        <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
         @inertiaHead
