@@ -58,6 +58,8 @@
 </template>
 
 <style>
+    @import 'datatables.net-dt';
+
     .truncate-text {
         max-width: 150px;
         white-space: nowrap;
