@@ -188,3 +188,19 @@
         $.deleteRecord($(this).data('id'), $('#recordTable'), $(this).closest('tr'));
     });
 </script>
+
+<style>
+    #record-modal {
+        width: 100%;
+    }
+
+    #record-modal tbody tr {
+        padding: 10px;
+        border: 1px solid grey;
+    }
+
+    #record-modal tbody tr td {
+        padding: 10px;
+        border: 1px solid grey;
+    }
+</style>

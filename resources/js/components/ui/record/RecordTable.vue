@@ -56,3 +56,12 @@
     </tfoot>
   </table>
 </template>
+
+<style>
+    .truncate-text {
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
