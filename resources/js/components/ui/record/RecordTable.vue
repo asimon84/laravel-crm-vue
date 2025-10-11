@@ -277,9 +277,10 @@
             let data = [];
 
             try {
-                //const response = await axios.delete('/record/'+id, data);
+                console.log('test');
+                const response = await axios.delete('/record/'+id, data);
 
-                $('#recordTable').DataTable().row(tr).remove().draw();
+                recordTable.draw();
 
                 //console.log('Record deleted successfully:', response.data);
             } catch (error) {
