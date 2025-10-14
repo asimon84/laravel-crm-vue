@@ -94,27 +94,6 @@
 
 <style>
     @import 'datatables.net-dt';
-
-    .truncate-text {
-        max-width: 150px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    #record-modal {
-        width: 100%;
-    }
-
-    #record-modal tbody tr {
-        padding: 10px;
-        border: 1px solid grey;
-    }
-
-    #record-modal tbody tr td {
-        padding: 10px;
-        border: 1px solid grey;
-    }
 </style>
 
 <script setup>
@@ -153,7 +132,7 @@
     async function getCsrfToken() {
         try {
             await axios.get('/sanctum/csrf-cookie');
-            console.log('CSRF cookie successfully fetched.');
+            console.log('token='+axios.get('/sanctum/csrf-cookie'));
         } catch (error) {
             console.error('Error fetching CSRF cookie:', error);
         }
@@ -238,22 +217,22 @@
         });
     };
 
-    $.deleteRecord = function (id, table, tr) {
-        getCsrfToken();
-
-        $.ajax({
-            url: '/record/' + id,
-            type: "DELETE",
-            dataType: 'json',
-            success: function (data) {
-                // console.log('Data received:', data);
-                table.DataTable().row(tr).remove().draw();
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error('AJAX error:', textStatus, errorThrown);
-            }
-        });
-    };
+//    $.deleteRecord = function (id, table, tr) {
+//        getCsrfToken();
+//
+//        $.ajax({
+//            url: '/record/' + id,
+//            type: "DELETE",
+//            dataType: 'json',
+//            success: function (data) {
+//                // console.log('Data received:', data);
+//                table.DataTable().row(tr).remove().draw();
+//            },
+//            error: function (jqXHR, textStatus, errorThrown) {
+//                console.error('AJAX error:', textStatus, errorThrown);
+//            }
+//        });
+//    };
 
     $(document).on('click', '.view-record', function () {
         $('#save-button').hide();
@@ -277,12 +256,13 @@
         let data = [];
 
         try {
-            console.log('test');
+            console.log('token='+axios.get('/sanctum/csrf-cookie'));
             const response = await axios.delete('/record/'+id, data);
 
-            recordTable.draw();
+            table.DataTable().draw();
+            //console.log(table.DataTable());
 
-            //console.log('Record deleted successfully:', response.data);
+            console.log('Record deleted successfully:', response.data);
         } catch (error) {
             console.error('Error deleting record:', error);
         }
