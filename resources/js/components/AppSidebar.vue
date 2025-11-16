@@ -11,10 +11,10 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import { dashboard,  about } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-vue-next';
+import { BookOpen, Folder, LayoutGrid, FileQuestionMark } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -26,7 +26,7 @@ const mainNavItems: NavItem[] = [
     {
         title: 'About',
         href: about(),
-        icon: LayoutGrid,
+        icon: FileQuestionMark,
     },
 ];
 
