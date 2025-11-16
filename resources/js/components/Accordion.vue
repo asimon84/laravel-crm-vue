@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<script setup>
-// No specific script logic needed for the container itself in this basic example
+<script setup lang="ts">
+
 </script>
 
 <style scoped>
