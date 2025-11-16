@@ -21,21 +21,17 @@ const breadcrumbs: BreadcrumbItem[] = [
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
 
-              <Accordion>
-                <AccordionPanel title="Section 1">
-                  <p>Content for section 1.</p>
+            <Accordion>
+                <AccordionPanel title="What is this?">
+                    <p>This is a sample CRM application built with a Vue.js frontend.</p>
                 </AccordionPanel>
-                <AccordionPanel title="Section 2">
-                  <p>Content for section 2.</p>
-                  <ul>
-                    <li>Item A</li>
-                    <li>Item B</li>
-                  </ul>
+                <AccordionPanel title="What is a CRM?">
+                    <p>A CRM is Customer Relationship Management software. It helps a business manage customers, contact information, and order histories.</p>
                 </AccordionPanel>
-                <AccordionPanel title="Section 3">
-                  <p>Content for section 3.</p>
+                <AccordionPanel title="What is the purpose?">
+                    <p>This application demonstrates Vue.js front end capabilities and componentization of reusable elements.</p>
                 </AccordionPanel>
-              </Accordion>
+            </Accordion>
 
         </div>
     </AppLayout>
