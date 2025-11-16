@@ -13,13 +13,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-});
-
 const isOpen = ref(false);
 
 const togglePanel = () => {
