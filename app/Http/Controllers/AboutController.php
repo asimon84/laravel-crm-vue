@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class AboutController extends Controller
 {
@@ -13,9 +13,9 @@ class AboutController extends Controller
      *
      * @param Request $request
      *
-     * @return View
+     * @return Response
      */
-    public function index(Request $request):View {
+    public function index(Request $request):Response {
         return Inertia::render('About', []);
     }
 }
