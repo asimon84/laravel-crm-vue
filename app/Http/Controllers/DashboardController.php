@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Record;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
@@ -13,9 +14,9 @@ class DashboardController extends Controller
      *
      * @param Request $request
      *
-     * @return \Illuminate\Contracts\View\View
+     * @return View
      */
-    public function index(Request $request) {
+    public function index(Request $request):View {
         $chartData = Record::getRecordsLastXDays(7);
 
         return Inertia::render('Dashboard', compact('chartData'));
