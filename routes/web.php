@@ -2,15 +2,16 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RecordController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome');
-})->name('home');
+Route::middleware('guest')->group(function () {
+    Route::get('/', [LoginController::class, 'index'])->name('home');
+});
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/records', [RecordController::class, 'index'])->name('chart-records');
     Route::get('/record/{id}', [RecordController::class, 'show'])->name('modal-record.show');
